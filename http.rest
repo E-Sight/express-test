@@ -6,6 +6,10 @@ GET http://localhost:3000/products/1
 
 ###
 
+GET http://localhost:3000/products/1?name=leo
+
+###
+
 POST http://localhost:3000/add
 Content-Type: application/json
 

@@ -10,6 +10,13 @@ app.use(
   })
 );
 
+//MIDDLEWARE
+function mid(req, res, next) {
+  console.log(req.query);
+  console.log(req.params);
+  next();
+}
+
 // GET, PUT, POST, DELETE
 
 app.get("/", (req, res) => {
@@ -17,7 +24,7 @@ app.get("/", (req, res) => {
   res.json(products);
 });
 
-app.get("/products/:id", (req, res) => {
+app.get("/products/:id", mid, (req, res) => {
   res.json(
     products.find((product) => {
       return +req.params.id === product.id;
